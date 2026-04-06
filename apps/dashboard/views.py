@@ -22,12 +22,7 @@ def _base_qs(filters: dict = None):
 
 @extend_schema(tags=["Dashboard"])
 class SummaryView(APIView):
-    """
-    GET /api/dashboard/summary/
-    Returns total income, total expenses, and net balance.
-    Accessible by: Admin, Analyst, Viewer
-    Results are cached in Redis for 5 minutes.
-    """
+    
     permission_classes = [IsAuthenticated, IsActiveUser, CanViewDashboard]
 
     @extend_schema(
@@ -80,11 +75,7 @@ class SummaryView(APIView):
 
 @extend_schema(tags=["Dashboard"])
 class CategoryBreakdownView(APIView):
-    """
-    GET /api/dashboard/category-breakdown/
-    Returns income and expense totals grouped by category.
-    Accessible by: Admin, Analyst, Viewer
-    """
+    
     permission_classes = [IsAuthenticated, IsActiveUser, CanViewDashboard]
 
     @extend_schema(
@@ -143,11 +134,7 @@ class CategoryBreakdownView(APIView):
 
 @extend_schema(tags=["Dashboard"])
 class MonthlyTrendsView(APIView):
-    """
-    GET /api/dashboard/trends/monthly/
-    Returns monthly income vs expense totals for the given year.
-    Accessible by: Admin, Analyst, Viewer
-    """
+   
     permission_classes = [IsAuthenticated, IsActiveUser, CanViewDashboard]
 
     @extend_schema(
@@ -202,11 +189,7 @@ class MonthlyTrendsView(APIView):
 
 @extend_schema(tags=["Dashboard"])
 class WeeklyTrendsView(APIView):
-    """
-    GET /api/dashboard/trends/weekly/
-    Returns weekly income vs expense totals (last 12 weeks).
-    Accessible by: Admin, Analyst, Viewer
-    """
+    
     permission_classes = [IsAuthenticated, IsActiveUser, CanViewDashboard]
 
     def get(self, request):
@@ -251,11 +234,7 @@ class WeeklyTrendsView(APIView):
 
 @extend_schema(tags=["Dashboard"])
 class RecentActivityView(APIView):
-    """
-    GET /api/dashboard/recent-activity/
-    Returns the most recent financial records.
-    Accessible by: Admin, Analyst, Viewer.
-    """
+    
     permission_classes = [IsAuthenticated, IsActiveUser, CanViewDashboard]
 
     @extend_schema(

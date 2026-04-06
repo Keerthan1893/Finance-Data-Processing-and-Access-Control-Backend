@@ -56,9 +56,7 @@ class FinancialRecordViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         """Only exclude deleted records by default if no filter is applied (handled by filterset)."""
         qs = super().get_queryset()
-        # If no filter is applied and we are not using the filterset yet, 
-        # we still want to default to non-deleted for general internal usage.
-        # However, DRF's filterset will handle this via filter_include_deleted.
+        
         return qs
 
     def get_serializer_class(self):
