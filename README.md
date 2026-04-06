@@ -35,7 +35,7 @@ Get up and running in less than 2 minutes.
 | Layer | Technology |
 |---|---|
 | **Framework** | Django 4.2 + Django REST Framework (DRF) |
-| **Database** | SQLite (Production-ready abstraction via Django ORM) |
+| **Database** | SQLite |
 | **Cache/Tasks** | Redis 7+ & Celery 5+ |
 | **Auth** | JWT (SimpleJWT) with Token Rotation & Blacklisting |
 | **Docs** | OpenAPI 3.0 via drf-spectacular (Swagger / Redoc) |
